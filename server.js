@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 const API_KEY = process.env.TWELVE_DATA_API_KEY;
-const POLL_INTERVAL = parseInt(process.env.POLL_INTERVAL_MS) || 10000;
+const POLL_INTERVAL = parseInt(process.env.POLL_INTERVAL_MS) || 100000;
 const PORT = parseInt(process.env.PORT) || 3001;
 
 // ---- In-memory cache ----
