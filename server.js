@@ -6,7 +6,9 @@ const app = express();
 app.use(cors());
 
 const API_KEY = process.env.TWELVE_DATA_API_KEY;
-const POLL_INTERVAL = parseInt(process.env.POLL_INTERVAL_MS) || 100000;
+// HARDCODED — env var cannot override this. Keeps us under Twelve Data 8/min, 800/day limits.
+// 100s = 0.6/min = ~720/day during a 20-hour active window.
+const POLL_INTERVAL = 100000;
 const PORT = parseInt(process.env.PORT) || 3001;
 
 // ---- In-memory cache ----
